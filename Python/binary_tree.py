@@ -4,10 +4,10 @@ class BinaryTree:
     def __init__(self, root_val:'int'):
         self.root = Node(root_val)
     
-    def lca(self, p, q):
+    def lca(self, p:'Node', q:'Node'):
         return self._lca(self.root, p, q)
     
-    def _lca(self, curr_node, p, q):
+    def _lca(self, curr_node:'Node', p:'Node', q:'Node'):
         if curr_node is None:
             return None
         
