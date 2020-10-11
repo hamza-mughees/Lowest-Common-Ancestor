@@ -41,6 +41,17 @@ fun main() {
     t.root.left?.right?.left = Node(7)
     t.root.left?.right?.right = Node(4)
 
+    /*
+    The above code generates the following tree:
+                3
+              /   \
+            5       1
+           / \     / \
+          6   2   0   8
+             / \
+            7   4
+    */
+
     lca(t, t.root.left!!, t.root.right!!)                                   // 5, 1 => 3
     lca(t, t.root.left!!.left!!, t.root.left!!.right!!.right!!)             // 6, 4 => 5
     lca(t, t.root.right!!, t.root.right!!.left!!)                           // 1, 0 => 1
