@@ -1,17 +1,20 @@
 import unittest
 from lca import Node, BinaryTree
 
-t = BinaryTree(3)
-r = t.root
+def constructTree():
+    t = BinaryTree(3)
+    r = t.root
 
-r.left = Node(5)
-r.right = Node(1)
-r.left.left = Node(6)
-r.left.right = Node(2)
-r.right.left = Node(0)
-r.right.right = Node(8)
-r.left.right.left = Node(7)
-r.left.right.right = Node(4)
+    r.left = Node(5)
+    r.right = Node(1)
+    r.left.left = Node(6)
+    r.left.right = Node(2)
+    r.right.left = Node(0)
+    r.right.right = Node(8)
+    r.left.right.left = Node(7)
+    r.left.right.right = Node(4)
+
+    return t, r
 
 '''
 The above code generates the following tree:
@@ -23,6 +26,8 @@ The above code generates the following tree:
          / \
         7   4
 '''
+
+t, r = constructTree()
 
 class TestLCA(unittest.TestCase):
     def test_lca_5_1(self):
