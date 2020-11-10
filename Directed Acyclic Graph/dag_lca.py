@@ -1,3 +1,5 @@
+from operator import attrgetter
+
 class Node:
     def __init__(self, value):
         self.value = value
@@ -32,4 +34,4 @@ class DAG:
             else:
                 comm_anc.append(self.lca(p, q.ancestors[0]))
         
-        return comm_anc[-1]
+        return max(comm_anc, key=attrgetter('value'))
